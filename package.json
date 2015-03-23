@@ -1,0 +1,26 @@
+{
+  "name": "sass.js-playground",
+  "version": "0.0.0",
+  "description": "This is sass.js' playground, temporary hosted under my github profile until it's mature enough to be moved to the proper organization.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/varemenos/sass.js-playground.git"
+  },
+  "author": "Adonis K. <aklp08@gmail.com> (http://adonisk.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/varemenos/sass.js-playground/issues"
+  },
+  "homepage": "https://github.com/varemenos/sass.js-playground",
+  "devDependencies": {
+    "load-grunt-tasks": "~3.1.0",
+    "grunt": "~0.4.5",
+    "load-grunt-configs": "~0.4.2",
+    "grunt-contrib-sass": "~0.9.2",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}

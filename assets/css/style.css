@@ -1,0 +1,83 @@
+body {
+  padding: 1rem;
+  background-color: #eee; }
+
+#title {
+  background: #fff;
+  padding: 1rem;
+  margin: 0; }
+
+#subtitle {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  margin-top: 0;
+  padding: 1rem;
+  color: #666; }
+
+#playground {
+  display: flex; }
+  #playground > h2 {
+    display: none; }
+  #playground > article {
+    flex: 1; }
+
+#credits {
+  padding-top: 10px; }
+
+#input-output {
+  display: flex;
+  align-items: center;
+  align-content: stretch;
+  justify-content: center; }
+  #input-output > section {
+    flex: 1 0 100px; }
+    #input-output > section > textarea {
+      box-sizing: border-box;
+      width: 100%;
+      height: 200px; }
+
+#options {
+  padding: 20px;
+  background: #fff;
+  columns: 3;
+  column-rule: 1px solid white;
+  column-gap: 15px; }
+
+.option {
+  position: relative;
+  padding: 10px 0; }
+  .option label {
+    display: inline-block;
+    width: 150px;
+    text-align: right; }
+    .option label:after {
+      content: ": "; }
+  .option input,
+  .option select {
+    margin-left: 10px; }
+  .option .comment {
+    display: block;
+    color: #666; }
+    .option .comment:before {
+      content: '/* '; }
+    .option .comment:after {
+      content: ' */'; }
+
+#filesystem {
+  display: flex;
+  align-items: flex-start;
+  align-content: stretch;
+  justify-content: center;
+  padding: 20px;
+  background: #DDD; }
+  #filesystem > section {
+    display: flex;
+    flex: 1 0 100px;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: center; }
+  #filesystem textarea {
+    height: 200px; }
+
+/*# sourceMappingURL=style.css.map */
