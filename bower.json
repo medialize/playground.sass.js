@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "normalize.css": "~3.0.2",
-    "sass.js": "~0.6.3"
+    "sass.js": "~0.6.3",
+    "jquery": "~2.1.3"
   }
 }
