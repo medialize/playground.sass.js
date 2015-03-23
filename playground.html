@@ -14,9 +14,17 @@
       see the <a href="https://github.com/medialize/sass.js/">Sass.js repository</a>.
     </p>
     <nav>
-      <button class="options-btn">Options</button>
-      <button class="input-output-btn">Compile</button>
-      <button class="filesystem-btn">Filesystem</button>
+      <button id="options-btn">
+        <i class="icon-cog"></i>
+        Options
+      </button>
+      <button id="input-output-btn">
+        Edit
+      </button>
+      <button id="filesystem-btn">
+        <i class="icon-file"></i>
+        Filesystem
+      </button>
     </nav>
   </header>
 
@@ -65,7 +73,7 @@
         <select id="option-indent">
           <option value="  " selected>2 Spaces</option>
           <option value="    ">4 Spaces</option>
-          <option value="	">Tab</option>
+          <option value="   ">Tab</option>
         </select>
       </section>
 
@@ -153,7 +161,12 @@
         <h3>SourceMap</h3>
         <textarea id="sourcemap"></textarea>
       </section>
-      <p><button type="button" id="convert">Convert</button></p>
+      <p>
+        <button type="button" id="convert">
+          <i class="icon-process"></i>
+          Convert
+        </button>
+      </p>
     </article>
 
 
@@ -178,115 +191,8 @@
    This fun was had by <a href="https://twitter.com/cjk101010">@cjk101010</a>, <a href="https://twitter.com/asciidisco">@asciidisco</a> and <a href="https://twitter.com/rodneyrehm">@rodneyrehm</a>.
   </p>
 
-  <script src="dist/sass.worker.js"></script>
-  <script>
-    Sass.initialize('dist/worker.min.js');
-
-    var convert = document.getElementById('convert');
-    var input = document.getElementById('input');
-    var output = document.getElementById('output');
-    var sourcemap = document.getElementById('sourcemap');
-
-    convert.addEventListener('click', function (event) {
-      event.preventDefault();
-      convert.disabled = false;
-      Sass.options(getOptions(), function() {
-        Sass.compile(input.value, function (result) {
-          if (result.status) {
-            var formatted = result.formatted;
-            delete result.formatted;
-            output.value = formatted + '\n\n' + JSON.stringify(result, null, 2);
-            sourcemap.value = '';
-          } else {
-            output.value = result.text;
-            sourcemap.value = JSON.stringify(result.map, null, 2);
-          }
-
-        });
-      })
-    }, false);
-
-    function getOptions() {
-      var options = {};
-      var elements = document.querySelectorAll('#options input, #options select');
-      [].forEach.call(elements, function(element) {
-        if (element.id.slice(0, 7) !== 'option-') {
-          return;
-        }
-
-        var key = element.id.slice(7);
-        options[key] = element.value;
-      });
-
-      // fix line breaks
-      options.linefeed = ({
-        '\\n': '\n',
-        '\\r\\n': '\r\n',
-      })[options.linefeed]
-
-      return options;
-    }
-
-    var files = document.getElementById('filesystem-list');
-    var editNew = document.getElementById('filesystem-new');
-    var editFile = document.getElementById('filesystem-file');
-    var editContent = document.getElementById('filesystem-content');
-    var editSave = document.getElementById('filesystem-save');
-
-    files.addEventListener('click', function(event) {
-      if (event.target.classList.contains('filesystem-edit')) {
-        readFile(event.target.parentNode);
-      } else if (event.target.classList.contains('filesystem-remove')) {
-        removeFile(event.target.parentNode)
-      }
-    });
-
-    editSave.addEventListener('click', function(event) {
-      writeFile(editFile.value, editContent.value);
-    });
-
-    editNew.addEventListener('click', function(event) {
-      editFile.value = '';
-      editContent.value = '';
-    });
-
-    function readFile(fileNode) {
-      editFile.value = fileNode.getAttribute('data-file');
-      editContent.value = fileNode.getAttribute('data-content');
-    }
-
-    function removeFile(fileNode) {
-      Sass.removeFile(fileNode.getAttribute('data-file'));
-      fileNode.parentNode.removeChild(fileNode);
-    }
-
-    function writeFile(file, content) {
-      var item = document.getElementById('filesystem--' + file);
-      if (!item) {
-        item = document.createElement('li');
-        item.id = 'filesystem--' + file;
-        item.setAttribute('data-file', file);
-        item.innerHTML = '<span></span><button type="button" class="filesystem-edit">edit</button><button type="button" class="filesystem-remove">remove</button>';
-        files.insertBefore(item, files.firstElementChild);
-      }
-
-      item.firstElementChild.textContent = file;
-      item.setAttribute('data-content', content);
-      Sass.writeFile(file, content);
-      return item;
-    }
-
-    var _demoFile = writeFile('demo.scss', '.imported { content: "yeah, file support!"; }');
-    readFile(_demoFile);
-
-    document.addEventListener("DOMContentLoaded", function(e) {
-      var optionsBtn = document.querySelector('#options-btn');
-      var inputOutputBtn = document.querySelector('#input-output-btn');
-      var filesystemBtn = document.querySelector('#filesystem-btn');
-      optionsBtn.addEventListener("click", function () {
-
-      });
-    });
-  </script>
+  <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="assets/libs/sass.js/dist/sass.worker.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
