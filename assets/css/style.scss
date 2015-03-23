@@ -1,3 +1,5 @@
+@import "_fonts";
+
 body {
   padding: 1rem;
   background-color: #eee;
@@ -28,7 +30,6 @@ body {
     flex: 1;
   }
 }
-
 
 #credits {
   padding-top: 10px;
@@ -112,5 +113,15 @@ body {
 
   & textarea {
     height: 200px;
+  }
+}
+
+#options,
+#filesystem,
+#input-output {
+  display: none;
+
+  &.active{
+    display: block;
   }
 }
