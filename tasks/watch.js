@@ -12,6 +12,12 @@ module.exports = {
       livereload: true
     }
   },
+  js: {
+    files: 'assets/js/**/*.js',
+    options: {
+      livereload: true
+    }
+  },
   config: {
     files: [
       'Gruntfile.js',

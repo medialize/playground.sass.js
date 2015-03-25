@@ -124,12 +124,24 @@ nav {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  #input-output > section {
+
+#editors {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  #editors h3 {
+    margin-top: 0;
+    font-size: 0.75rem; }
+  #editors > section {
     -webkit-box-flex: 1;
     -webkit-flex: 1 0 100px;
         -ms-flex: 1 0 100px;
-            flex: 1 0 100px; }
-    #input-output > section > textarea {
+            flex: 1 0 100px;
+    padding-left: 1rem; }
+    #editors > section:first-child {
+      padding-left: 0; }
+    #editors > section .editor {
       box-sizing: border-box;
       width: 100%;
       height: 200px; }

@@ -20,12 +20,12 @@
     </p>
   </header>
   <nav>
+    <button id="input-output-btn" class="active">
+      Edit
+    </button>
     <button id="options-btn">
       <i class="icon-cog"></i>
       Options
-    </button>
-    <button id="input-output-btn">
-      Edit
     </button>
     <button id="filesystem-btn">
       <i class="icon-file"></i>
@@ -146,34 +146,26 @@
 
     <h2>Sass.compile()</h2>
 
-    <article id="input-output">
-      <section>
-        <h3>Input</h3>
-        <textarea id="input">@import "demo";
-  $foo: 10px;
-  .selector {
-    margin: $foo;
-    .nested {
-      margin: $foo / 2;
-    }
-  }</textarea>
-      </section>
-      <section>
-        <h3>Output</h3>
-        <textarea id="output"></textarea>
-      </section>
-      <section>
-        <h3>SourceMap</h3>
-        <textarea id="sourcemap"></textarea>
-      </section>
-      <p>
-        <button type="button" id="convert">
-          <i class="icon-process"></i>
-          Convert
-        </button>
-      </p>
+    <article id="input-output" class="active">
+      <div id="editors">
+        <section>
+          <h3>Input</h3>
+          <div class="editor" id="input"></div>
+        </section>
+        <section>
+          <h3>Output</h3>
+          <div class="editor" id="output"></div>
+        </section>
+        <section>
+          <h3>SourceMap</h3>
+          <div class="editor" id="sourcemap"></div>
+        </section>
+      </div>
+      <button type="button" id="convert">
+        <i class="icon-process"></i>
+        Convert
+      </button>
     </article>
-
 
     <h2>Filesystem</h2>
     <article id="filesystem">
@@ -193,6 +185,7 @@
   </div>
 
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="assets/js/ace/ace.js"></script>
   <script src="assets/libs/sass.js/dist/sass.worker.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
