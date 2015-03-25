@@ -1,8 +1,12 @@
 @import "_fonts";
+@import "_clearfix";
 
 body {
-  padding: 1rem;
   background-color: #eee;
+}
+
+header{
+  display: flex;
 }
 
 #title {
@@ -12,11 +16,32 @@ body {
 }
 
 #subtitle {
+  flex: 1;
   background: #fff;
-  border-top: 1px solid #ddd;
-  margin-top: 0;
-  padding: 1rem;
+  border-left: 1px solid #ddd;
+  margin: 0;
+  padding: 1.75rem;
   color: #666;
+}
+
+nav{
+  @include clearfix;
+  margin-bottom: 1rem;
+  border-top: 1px solid #ddd;
+
+  button{
+    display: block;
+    float: left;
+    color: #fff;
+    background: #999;
+    border: none;
+    margin-top: -1px;
+    margin-left: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 
 #playground {
