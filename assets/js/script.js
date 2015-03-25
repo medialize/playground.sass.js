@@ -160,7 +160,7 @@ var appInit = function () {
   });
 
   files.on('click', function(e) {
-    var target = $(e.target);
+    var target = $(e.target).is('button') || $(e.target).parent('button');
     if (target.hasClass('edit-file')) {
       readFile(target.parent());
     } else if (target.hasClass('remove-file')) {
