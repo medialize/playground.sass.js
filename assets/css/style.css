@@ -102,8 +102,9 @@ nav {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    padding: 1rem;
     background: #fff;
-    padding: 1rem; }
+    outline: 1px solid #ddd; }
 
 #credits {
   padding-top: 10px; }
