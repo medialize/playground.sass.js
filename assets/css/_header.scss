@@ -1,0 +1,40 @@
+header {
+  display: flex;
+}
+
+#title {
+  margin: 0;
+  padding: 1rem;
+  color: #222;
+  background: #fff;
+}
+
+#subtitle {
+  flex: 1;
+  margin: 0;
+  padding: 1rem;
+  color: #666;
+  background: #fff;
+  border-left: 1px solid #ddd;
+}
+
+nav {
+  @include clearfix;
+  border-top: 1px solid #ddd;
+
+  button {
+    display: block;
+    float: left;
+    margin-left: 0.5rem;
+    margin-top: -1px;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    &.active {
+      color: #eee;
+      background-color: #779;
+      border-color: #668;
+    }
+  }
+}

@@ -16,7 +16,7 @@ var editorInit = function () {
     'input',
     'output',
     'sourcemap',
-    'filesystem-content'
+    'file_content'
   ];
 
   editorsArr.forEach(function (editor) {
@@ -39,7 +39,7 @@ var editorInit = function () {
 var actionbarInit = function () {
     $('#options-btn').on("click", function (e) {
       $(this).toggleClass('active');
-      $('#options').toggleClass('active');
+      $('#options-wrap').toggleClass('active');
     });
 
     $('#filesystem-btn').on("click", function (e) {
@@ -53,20 +53,24 @@ var actionbarInit = function () {
     });
 };
 
+/**
+ * initializes the Sass.js specific parts
+ * @param  {Object} editors The Ace.js editors Array
+ */
 var appInit = function (editors) {
   Sass.initialize('assets/js/sass.js/worker.js');
 
   function getOptions() {
     var options = {};
 
-    var elements = document.querySelectorAll('#options input, #options select');
-    [].forEach.call(elements, function(element) {
-      if (element.id.slice(0, 7) !== 'option-') {
+    var elements = $('#options input, #options select');
+    elements.each(function (i, element) {
+      if ($(element).attr('id').slice(0, 7) !== 'option-') {
         return;
       }
 
-      var key = element.id.slice(7);
-      options[key] = element.value;
+      var key = $(element).attr('id').slice(7);
+      options[key] = $(element).val();
     });
 
     // fix line breaks
@@ -102,6 +106,63 @@ var appInit = function (editors) {
       });
     });
   });
+
+  var files = $('#file_list');
+  var editNew = $('#new_file');
+  var editFile = $('#file_name');
+  var editSave = $('#save_file');
+
+  function readFile (fileNode) {
+    editFile.val($(fileNode).data('file'));
+    editors.file_content.setValue($(fileNode).data('content'));
+    resetCursor(editors.file_content);
+  }
+
+  function removeFile (fileNode) {
+    Sass.removeFile($(fileNode).data('file'));
+    $(fileNode).remove();
+  }
+
+  function writeFile (file, content) {
+    var item = document.getElementById(file);
+    item = $(item);
+
+    if (!item.length) {
+      item = $('<li></li>');
+      item.attr('class', 'file');
+      item.attr('id', file);
+      item.data('file', file);
+      item.append('<i class="icon-file"></i><span></span><button type="button" class="edit-file">edit</button><button type="button" class="remove-file">remove</button>');
+      item.appendTo(files);
+    }
+
+    item.find('span').text(file);
+    item.data('content', content);
+    Sass.writeFile(file, content);
+    return item;
+  }
+
+  editSave.on('click', function(e) {
+    writeFile(editFile.val(), editors.file_content.getValue());
+  });
+
+  editNew.on('click', function(e) {
+    editFile.val('');
+    editors.file_content.setValue('');
+    resetCursor(editors.file_content);
+  });
+
+  files.on('click', function(e) {
+    var target = $(e.target);
+    if (target.hasClass('edit-file')) {
+      readFile(target.parent());
+    } else if (target.hasClass('remove-file')) {
+      removeFile(target.parent());
+    }
+  });
+
+  var _demoFile = writeFile('demo.scss', '.imported {\n  content: "yeah, file support!";\n}');
+  readFile(_demoFile);
 };
 
 $(function () {

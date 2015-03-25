@@ -1,0 +1,26 @@
+@import "_clearfix";
+@import "_fonts";
+@import "_button";
+
+body {
+  background-color: #eee;
+}
+
+a {
+  transition: color 250ms;
+
+  &,
+  &:visited {
+    color: #447;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: #114;
+    text-decoration: underline;
+  }
+}
+
+button {
+  @include button;
+}

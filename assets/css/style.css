@@ -98,20 +98,16 @@ nav {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 1rem; }
-  #playground > h2 {
-    display: none; }
+  padding: 1rem 0 1rem 1rem; }
   #playground > article {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    margin-right: 1rem;
     padding: 1rem;
     background: #fff;
     outline: 1px solid #ddd; }
-
-#credits {
-  padding-top: 10px; }
 
 #input-output {
   display: -webkit-box;
@@ -130,38 +126,91 @@ nav {
       -ms-flex-pack: center;
           justify-content: center; }
 
-#editors {
+#filesystem,
+#input-output,
+#options-wrap {
+  display: none; }
+  #filesystem.active,
+  #input-output.active,
+  #options-wrap.active {
+    display: block; }
+
+.section-title {
+  font-size: 1rem;
+  margin: -1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd; }
+
+.section-subtitle {
+  font-size: 0.75rem;
+  margin-top: 0; }
+
+#editors,
+#files {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
-  #editors h3 {
-    margin-top: 0;
-    font-size: 0.75rem; }
-  #editors > section {
+  #editors > section,
+  #files > section {
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 100px;
-        -ms-flex: 1 0 100px;
-            flex: 1 0 100px;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     padding-left: 1rem; }
-    #editors > section:first-child {
+    #editors > section:first-child,
+    #files > section:first-child {
       padding-left: 0; }
+
+#files > section:last-child {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+      -ms-flex: 2;
+          flex: 2; }
+#files ul {
+  list-style: none;
+  list-style-image: none;
+  list-style-position: outside;
+  padding: 0; }
+#files input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid #ddd; }
+
+.file {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: #eee;
+  border: 1px solid #ddd;
+  border-radius: 3px; }
+  .file button {
+    margin-left: 0.5rem; }
+  .file .icon-file {
+    padding: 0.25rem; }
+  .file span {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0.25rem 0; }
 
 .editor {
   box-sizing: border-box;
   width: 100%;
-  height: 350px; }
-
-#options {
-  -webkit-columns: 3;
-     -moz-columns: 3;
-          columns: 3;
-  -webkit-column-rule: 1px solid white;
-     -moz-column-rule: 1px solid white;
-          column-rule: 1px solid white;
-  -webkit-column-gap: 15px;
-     -moz-column-gap: 15px;
-          column-gap: 15px; }
+  height: 300px; }
 
 .option {
   position: relative;
@@ -182,58 +231,3 @@ nav {
       content: '/* '; }
     .option .comment:after {
       content: ' */'; }
-
-#filesystem {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
-          align-content: stretch;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 20px;
-  background: #fff; }
-  #filesystem > section {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 100px;
-        -ms-flex: 1 0 100px;
-            flex: 1 0 100px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
-            align-content: stretch;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
-  #filesystem textarea {
-    height: 200px; }
-
-#options,
-#filesystem,
-#input-output {
-  display: none; }
-  #options.active,
-  #filesystem.active,
-  #input-output.active {
-    display: block; }

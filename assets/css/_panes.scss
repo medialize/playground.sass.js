@@ -1,0 +1,29 @@
+#playground {
+  display: flex;
+  padding: 1rem 0 1rem 1rem;
+
+  & > article {
+    flex: 1;
+    margin-right: 1rem;
+    padding: 1rem;
+    background: #fff;
+    outline: 1px solid #ddd;
+  }
+}
+
+#input-output {
+  display: flex;
+  align-items: center;
+  align-content: stretch;
+  justify-content: center;
+}
+
+#filesystem,
+#input-output,
+#options-wrap{
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
