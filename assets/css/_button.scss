@@ -1,0 +1,16 @@
+@mixin button {
+    padding: 0.25rem 0.5rem;
+    color: #fff;
+    background: #999;
+    border: none;
+    border-radius: 3px;
+
+    &.active {
+      color: #eee;
+      background-color: #779;
+    }
+
+    &:focus {
+      outline: none;
+    }
+}

@@ -39,6 +39,18 @@ a {
     color: #114;
     text-decoration: underline; }
 
+button {
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  background: #999;
+  border: none;
+  border-radius: 3px; }
+  button.active {
+    color: #eee;
+    background-color: #779; }
+  button:focus {
+    outline: none; }
+
 header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -63,7 +75,6 @@ header {
   border-left: 1px solid #ddd; }
 
 nav {
-  margin-bottom: 1rem;
   border-top: 1px solid #ddd; }
   nav:before, nav:after {
     content: " ";
@@ -73,33 +84,26 @@ nav {
   nav button {
     display: block;
     float: left;
-    margin-top: -1px;
     margin-left: 0.5rem;
-    padding: 0.25rem 0.5rem;
-    color: #fff;
-    background: #999;
-    border: none;
-    border-radius: 3px;
+    margin-top: -1px;
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
-    nav button.active {
-      color: #eee;
-      background-color: #779; }
-    nav button:focus {
-      outline: none; }
 
 #playground {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  padding: 1rem; }
   #playground > h2 {
     display: none; }
   #playground > article {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
-            flex: 1; }
+            flex: 1;
+    background: #fff;
+    padding: 1rem; }
 
 #credits {
   padding-top: 10px; }
@@ -131,8 +135,6 @@ nav {
       height: 200px; }
 
 #options {
-  padding: 20px;
-  background: #fff;
   -webkit-columns: 3;
      -moz-columns: 3;
           columns: 3;
@@ -180,7 +182,7 @@ nav {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 20px;
-  background: #DDD; }
+  background: #fff; }
   #filesystem > section {
     display: -webkit-box;
     display: -webkit-flex;

@@ -1,26 +1,31 @@
 @import "_fonts";
+@import "_button";
 @import "_clearfix";
 
 body {
   background-color: #eee;
 }
 
-a{
+a {
   transition: color 250ms;
 
   &,
-  &:visited{
+  &:visited {
     color: #447;
     text-decoration: none;
   }
 
-  &:hover{
+  &:hover {
     color: #114;
     text-decoration: underline;
   }
 }
 
-header{
+button {
+  @include button;
+}
+
+header {
   display: flex;
 }
 
@@ -40,37 +45,23 @@ header{
   border-left: 1px solid #ddd;
 }
 
-nav{
+nav {
   @include clearfix;
-  margin-bottom: 1rem;
   border-top: 1px solid #ddd;
 
-  button{
+  button {
     display: block;
     float: left;
-    margin-top: -1px;
     margin-left: 0.5rem;
-    padding: 0.25rem 0.5rem;
-    color: #fff;
-    background: #999;
-    border: none;
-    border-radius: 3px;
+    margin-top: -1px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-
-    &.active{
-      color: #eee;
-      background-color: #779;
-    }
-
-    &:focus{
-      outline: none;
-    }
   }
 }
 
 #playground {
   display: flex;
+  padding: 1rem;
 
   & > h2 {
     display: none;
@@ -78,6 +69,8 @@ nav{
 
   & > article {
     flex: 1;
+    background: #fff;
+    padding: 1rem;
   }
 }
 
@@ -103,8 +96,6 @@ nav{
 }
 
 #options {
-  padding: 20px;
-  background: #fff;
   columns: 3;
   column-rule: 1px solid white;
   column-gap: 15px;
@@ -150,7 +141,7 @@ nav{
   justify-content: center;
 
   padding: 20px;
-  background: #DDD;
+  background: #fff;
 
   & > section {
     display: flex;
@@ -171,7 +162,7 @@ nav{
 #input-output {
   display: none;
 
-  &.active{
+  &.active {
     display: block;
   }
 }

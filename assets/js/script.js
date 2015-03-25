@@ -94,10 +94,10 @@ function writeFile(file, content) {
   return item;
 }
 
-var _demoFile = writeFile('demo.scss', '.imported { content: "yeah, file support!"; }');
-readFile(_demoFile);
-
 $(function () {
+  var _demoFile = writeFile('demo.scss', '.imported { content: "yeah, file support!"; }');
+  readFile(_demoFile);
+
     var options = $('#options');
     var inputOutput = $('#input-output');
     var filesystem = $('#filesystem');
