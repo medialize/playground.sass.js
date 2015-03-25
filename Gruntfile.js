@@ -9,6 +9,6 @@ module.exports = function (grunt) {
   });
   grunt.initConfig(configs);
 
-  grunt.registerTask('build', ['sass:dist']);
+  grunt.registerTask('build', ['sass:dev', 'autoprefixer:dev']);
   grunt.registerTask('default', ['build']);
 }

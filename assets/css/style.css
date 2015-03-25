@@ -30,7 +30,8 @@ body {
   background-color: #eee; }
 
 a {
-  transition: color 250ms; }
+  -webkit-transition: color 250ms;
+          transition: color 250ms; }
   a, a:visited {
     color: #447;
     text-decoration: none; }
@@ -39,6 +40,9 @@ a {
     text-decoration: underline; }
 
 header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex; }
 
 #title {
@@ -48,7 +52,10 @@ header {
   background: #fff; }
 
 #subtitle {
-  flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin: 0;
   padding: 1rem;
   color: #666;
@@ -82,22 +89,42 @@ nav {
       outline: none; }
 
 #playground {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex; }
   #playground > h2 {
     display: none; }
   #playground > article {
-    flex: 1; }
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
 
 #credits {
   padding-top: 10px; }
 
 #input-output {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  align-content: stretch;
-  justify-content: center; }
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   #input-output > section {
-    flex: 1 0 100px; }
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 100px;
+        -ms-flex: 1 0 100px;
+            flex: 1 0 100px; }
     #input-output > section > textarea {
       box-sizing: border-box;
       width: 100%;
@@ -106,9 +133,15 @@ nav {
 #options {
   padding: 20px;
   background: #fff;
-  columns: 3;
-  column-rule: 1px solid white;
-  column-gap: 15px; }
+  -webkit-columns: 3;
+     -moz-columns: 3;
+          columns: 3;
+  -webkit-column-rule: 1px solid white;
+     -moz-column-rule: 1px solid white;
+          column-rule: 1px solid white;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px; }
 
 .option {
   position: relative;
@@ -131,19 +164,48 @@ nav {
       content: ' */'; }
 
 #filesystem {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
-  align-content: stretch;
-  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 20px;
   background: #DDD; }
   #filesystem > section {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex: 1 0 100px;
-    flex-direction: column;
-    align-items: stretch;
-    align-content: stretch;
-    justify-content: center; }
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 100px;
+        -ms-flex: 1 0 100px;
+            flex: 1 0 100px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+            align-content: stretch;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   #filesystem textarea {
     height: 200px; }
 
@@ -155,5 +217,3 @@ nav {
   #filesystem.active,
   #input-output.active {
     display: block; }
-
-/*# sourceMappingURL=style.css.map */

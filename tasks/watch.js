@@ -7,7 +7,7 @@ module.exports = {
   },
   css: {
     files: 'assets/css/**/*.scss',
-    tasks: ['sass'],
+    tasks: ['sass', 'autoprefixer'],
     options: {
       livereload: true
     }
