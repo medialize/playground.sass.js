@@ -29,6 +29,15 @@
 body {
   background-color: #eee; }
 
+a {
+  transition: color 250ms; }
+  a, a:visited {
+    color: #447;
+    text-decoration: none; }
+  a:hover {
+    color: #114;
+    text-decoration: underline; }
+
 header {
   display: flex; }
 
@@ -41,7 +50,7 @@ header {
 #subtitle {
   flex: 1;
   margin: 0;
-  padding: 1.75rem;
+  padding: 1rem;
   color: #666;
   background: #fff;
   border-left: 1px solid #ddd; }
