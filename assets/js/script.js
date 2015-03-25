@@ -10,8 +10,6 @@ var resetCursor = function (editor) {
  * It initializes the Ace.js-based editors
  */
 var editorInit = function () {
-  var editors = {};
-
   var editorsArr = [
     'input',
     'output',
@@ -29,8 +27,6 @@ var editorInit = function () {
 
   editors.input.setValue('@import "demo";\n\n$foo: 10px;\n\n.selector {\n  margin: $foo;\n\n  .nested {\n    margin: $foo / 2;\n  }\n}');
   resetCursor(editors.input);
-
-  return editors;
 };
 
 /**
@@ -55,9 +51,8 @@ var actionbarInit = function () {
 
 /**
  * initializes the Sass.js specific parts
- * @param  {Object} editors The Ace.js editors Array
  */
-var appInit = function (editors) {
+var appInit = function () {
   Sass.initialize('assets/js/sass.js/worker.js');
 
   function getOptions() {
@@ -165,8 +160,10 @@ var appInit = function (editors) {
   readFile(_demoFile);
 };
 
+var editors = {};
+
 $(function () {
   actionbarInit();
-  var editors = editorInit();
-  appInit(editors);
+  editorInit();
+  appInit();
 });
