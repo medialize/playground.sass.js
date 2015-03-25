@@ -1,13 +1,19 @@
 @mixin button {
-    padding: 0.25rem 0.5rem;
-    color: #fff;
-    background: #999;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0 0 5px #888;
-    border: 1px solid #888;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  background: #999;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid #888;
 
-    &:focus {
-      outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin wideAttachedButton{
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
 }

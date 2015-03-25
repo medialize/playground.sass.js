@@ -3,6 +3,8 @@
 @import "_button";
 
 body {
+  overflow-x: auto;
+  overflow-y: scroll;
   background-color: #eee;
 }
 

@@ -26,7 +26,15 @@
 .icon-file:before {
   content: "\f0f6"; }
 
+.icon-pencil:before {
+  content: "\f040"; }
+
+.icon-trash:before {
+  content: "\f014"; }
+
 body {
+  overflow-x: auto;
+  overflow-y: scroll;
   background-color: #eee; }
 
 a {
@@ -45,7 +53,6 @@ button {
   background: #999;
   border: none;
   border-radius: 3px;
-  box-shadow: 0 0 5px #888;
   border: 1px solid #888; }
   button:focus {
     outline: none; }
@@ -164,24 +171,25 @@ nav {
     #files > section:first-child {
       padding-left: 0; }
 
-#files > section:last-child {
-  -webkit-box-flex: 2;
-  -webkit-flex: 2;
-      -ms-flex: 2;
-          flex: 2; }
-#files ul {
+#files #file_list {
+  margin-bottom: 0;
+  padding: 0;
   list-style: none;
   list-style-image: none;
-  list-style-position: outside;
-  padding: 0; }
-#files input {
+  list-style-position: outside; }
+#files #file_name {
   box-sizing: border-box;
   display: block;
   width: 100%;
-  margin-bottom: 1rem;
   padding: 0.5rem;
   background: #fff;
   border: 1px solid #ddd; }
+#files #save_file,
+#files #new_file {
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none; }
 
 .file {
   display: -webkit-box;
@@ -191,15 +199,18 @@ nav {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin-bottom: 0.5rem;
   padding: 0.5rem;
   background: #eee;
   border: 1px solid #ddd;
-  border-radius: 3px; }
+  border-bottom: none; }
   .file button {
     margin-left: 0.5rem; }
   .file .icon-file {
-    padding: 0.25rem; }
+    padding: 0.25rem 0;
+    padding-right: 0.5rem; }
+  .file .icon-file,
+  .file span {
+    line-height: 1.5; }
   .file span {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -231,3 +242,6 @@ nav {
       content: '/* '; }
     .option .comment:after {
       content: ' */'; }
+
+.edit-file {
+  padding-right: 0.3rem; }

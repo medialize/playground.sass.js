@@ -7,17 +7,26 @@ var resetCursor = function (editor) {
 };
 
 /**
+ * Makes the Ace.js editors to recalculate their dimensions
+ */
+var resizeEditors = function () {
+  editors.list.forEach(function (editor) {
+    editors[editor].resize();
+  });
+};
+
+/**
  * It initializes the Ace.js-based editors
  */
 var editorInit = function () {
-  var editorsArr = [
+  editors.list = [
     'input',
     'output',
     'sourcemap',
     'file_content'
   ];
 
-  editorsArr.forEach(function (editor) {
+  editors.list.forEach(function (editor) {
     editors[editor] = ace.edit(editor);
     editors[editor].setTheme("ace/theme/tomorrow");
     editors[editor].getSession().setMode('ace/mode/scss');
@@ -25,7 +34,7 @@ var editorInit = function () {
     editors[editor].$blockScrolling = Infinity;
   });
 
-  editors.input.setValue('@import "demo";\n\n$foo: 10px;\n\n.selector {\n  margin: $foo;\n\n  .nested {\n    margin: $foo / 2;\n  }\n}');
+  editors.input.setValue('@import "_variables";\n@import "_demo";\n\n.selector {\n  margin: $size;\n  background-color: $brandColor;\n\n  .nested {\n    margin: $size / 2;\n  }\n}');
   resetCursor(editors.input);
 };
 
@@ -36,16 +45,19 @@ var actionbarInit = function () {
     $('#options-btn').on("click", function (e) {
       $(this).toggleClass('active');
       $('#options-wrap').toggleClass('active');
+      resizeEditors();
     });
 
     $('#filesystem-btn').on("click", function (e) {
       $(this).toggleClass('active');
       $('#filesystem').toggleClass('active');
+      resizeEditors();
     });
 
     $('#input-output-btn').on("click", function (e) {
       $(this).toggleClass('active');
       $('#input-output').toggleClass('active');
+      resizeEditors();
     });
 };
 
@@ -127,11 +139,11 @@ var appInit = function () {
       item.attr('class', 'file');
       item.attr('id', file);
       item.data('file', file);
-      item.append('<i class="icon-file"></i><span></span><button type="button" class="edit-file">edit</button><button type="button" class="remove-file">remove</button>');
+      item.append('<i class="icon-file"></i><span class="file_title"></span><button type="button" class="edit-file"><i class="icon-pencil"></i></button><button type="button" class="remove-file"><i class="icon-trash"></i></button>');
       item.appendTo(files);
     }
 
-    item.find('span').text(file);
+    item.find('.file_title').text(file);
     item.data('content', content);
     Sass.writeFile(file, content);
     return item;
@@ -156,8 +168,17 @@ var appInit = function () {
     }
   });
 
-  var _demoFile = writeFile('demo.scss', '.imported {\n  content: "yeah, file support!";\n}');
-  readFile(_demoFile);
+  var _demoFiles = [{
+      name: '_variables.scss',
+      content: '$brandColor: #f60;\n$size: 1em;'
+    }, {
+      name: '_demo.scss',
+      content: '.imported {\n  content: "yay, file support!";\n}'
+    }];
+
+    _demoFiles.forEach(function (_demoFile) {
+      var _demoItem = writeFile(_demoFile.name, _demoFile.content);
+    });
 };
 
 var editors = {};
@@ -166,4 +187,7 @@ $(function () {
   actionbarInit();
   editorInit();
   appInit();
+
+  // would be nice to debounce this in the future
+  $(window).on('resize', resizeEditors);
 });
