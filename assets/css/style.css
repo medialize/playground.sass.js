@@ -33,17 +33,18 @@ header {
   display: flex; }
 
 #title {
-  background: #fff;
+  margin: 0;
   padding: 1rem;
-  margin: 0; }
+  color: #222;
+  background: #fff; }
 
 #subtitle {
   flex: 1;
-  background: #fff;
-  border-left: 1px solid #ddd;
   margin: 0;
   padding: 1.75rem;
-  color: #666; }
+  color: #666;
+  background: #fff;
+  border-left: 1px solid #ddd; }
 
 nav {
   margin-bottom: 1rem;
@@ -56,15 +57,20 @@ nav {
   nav button {
     display: block;
     float: left;
-    color: #fff;
-    background: #999;
-    border: none;
     margin-top: -1px;
     margin-left: 0.5rem;
     padding: 0.25rem 0.5rem;
+    color: #fff;
+    background: #999;
+    border: none;
     border-radius: 3px;
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
+    nav button.active {
+      color: #eee;
+      background-color: #779; }
+    nav button:focus {
+      outline: none; }
 
 #playground {
   display: flex; }

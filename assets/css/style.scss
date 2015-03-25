@@ -10,18 +10,19 @@ header{
 }
 
 #title {
-  background: #fff;
-  padding: 1rem;
   margin: 0;
+  padding: 1rem;
+  color: #222;
+  background: #fff;
 }
 
 #subtitle {
   flex: 1;
-  background: #fff;
-  border-left: 1px solid #ddd;
   margin: 0;
   padding: 1.75rem;
   color: #666;
+  background: #fff;
+  border-left: 1px solid #ddd;
 }
 
 nav{
@@ -32,15 +33,24 @@ nav{
   button{
     display: block;
     float: left;
-    color: #fff;
-    background: #999;
-    border: none;
     margin-top: -1px;
     margin-left: 0.5rem;
     padding: 0.25rem 0.5rem;
+    color: #fff;
+    background: #999;
+    border: none;
     border-radius: 3px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+
+    &.active{
+      color: #eee;
+      background-color: #779;
+    }
+
+    &:focus{
+      outline: none;
+    }
   }
 }
 

@@ -107,14 +107,17 @@ $(function () {
     var filesystemBtn = $('#filesystem-btn');
 
     optionsBtn.on("click", function (e) {
+      $(this).toggleClass('active');
       options.toggleClass('active');
     });
 
     filesystemBtn.on("click", function (e) {
+      $(this).toggleClass('active');
       filesystem.toggleClass('active');
     });
 
     inputOutputBtn.on("click", function (e) {
+      $(this).toggleClass('active');
       inputOutput.toggleClass('active');
     });
 });
