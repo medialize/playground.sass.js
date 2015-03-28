@@ -1,6 +1,6 @@
 module.exports = {
   html: {
-    files: 'playground.html',
+    files: '*.html',
     options: {
       livereload: true
     }

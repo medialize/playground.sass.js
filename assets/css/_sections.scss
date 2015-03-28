@@ -84,36 +84,31 @@
   height: 300px;
 }
 
+#options{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .option {
   position: relative;
-  padding: 10px 0;
+  flex: 1 1 300px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  padding: 1rem;
+  background-color: #f2f2f2;
 
   label {
+    font-weight: bold;
     display: inline-block;
-    width: 150px;
-    text-align: right;
 
     &:after {
       content: ": ";
     }
   }
 
-  input,
-  select {
-    margin-left: 10px;
-  }
-
   .comment {
-    display: block;
-    color: #666;
-
-    &:before {
-      content: '/* ';
-    }
-
-    &:after {
-      content: ' */';
-    }
+    margin-bottom: 0;
+    opacity: 0.6;
   }
 }
 

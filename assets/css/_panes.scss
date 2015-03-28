@@ -1,4 +1,4 @@
-#playground {
+.playground {
   display: flex;
   padding: 1rem 0 1rem 1rem;
 
@@ -18,10 +18,19 @@
   justify-content: center;
 }
 
+.playground #options-wrap {
+  padding-left: 0;
+  padding-bottom: 0;
+
+  .section-title {
+    margin-left: 0;
+  }
+}
+
 #filesystem,
 #input-output,
 #options-wrap,
-#sourcemap-wrap{
+#sourcemap-wrap {
   display: none;
 
   &.active {
