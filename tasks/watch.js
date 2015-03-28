@@ -1,19 +1,21 @@
 module.exports = {
   html: {
-    files: '*.html',
+    files: 'source/*.html',
+    tasks: ['html'],
     options: {
       livereload: true
     }
   },
-  css: {
-    files: 'assets/css/**/*.scss',
-    tasks: ['sass', 'autoprefixer'],
+  scss: {
+    files: 'source/scss/**/*.scss',
+    tasks: ['css'],
     options: {
       livereload: true
     }
   },
   js: {
-    files: 'assets/js/**/*.js',
+    files: 'source/js/**/*.js',
+    tasks: ['js'],
     options: {
       livereload: true
     }

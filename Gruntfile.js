@@ -9,6 +9,12 @@ module.exports = function (grunt) {
   });
   grunt.initConfig(configs);
 
-  grunt.registerTask('build', ['sass:dev', 'autoprefixer:dev']);
+  grunt.registerTask('html', ['htmlmin']);
+  grunt.registerTask('css', ['sass:dev', 'autoprefixer:dev']);
+  grunt.registerTask('js', ['concat', 'copy']);
+
+  grunt.registerTask('build', ['html', 'css', 'js']);
+  grunt.registerTask('deploy', ['buildcontrol:ghpages']);
+
   grunt.registerTask('default', ['build']);
 }

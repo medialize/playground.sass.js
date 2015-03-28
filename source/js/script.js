@@ -71,7 +71,7 @@ var actionbarInit = function () {
  * initializes the Sass.js specific parts
  */
 var appInit = function () {
-  Sass.initialize('assets/js/sass.js/worker.js');
+  Sass.initialize('js/sass.js/worker.js');
 
   function getOptions() {
     var options = {};
