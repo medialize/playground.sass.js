@@ -20,7 +20,8 @@
 
 #filesystem,
 #input-output,
-#options-wrap{
+#options-wrap,
+#sourcemap-wrap{
   display: none;
 
   &.active {

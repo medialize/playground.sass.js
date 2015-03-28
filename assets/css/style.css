@@ -431,6 +431,7 @@ header {
           flex: 1;
   margin: 0;
   padding: 1rem;
+  line-height: 2;
   color: #666;
   background: #fff;
   border-left: 1px solid #ddd; }
@@ -490,11 +491,13 @@ nav {
 
 #filesystem,
 #input-output,
-#options-wrap {
+#options-wrap,
+#sourcemap-wrap {
   display: none; }
   #filesystem.active,
   #input-output.active,
-  #options-wrap.active {
+  #options-wrap.active,
+  #sourcemap-wrap.active {
     display: block; }
 
 .section-title {

@@ -59,6 +59,12 @@ var actionbarInit = function () {
       $('#input-output').toggleClass('active');
       resizeEditors();
     });
+
+    $('#sourcemap-btn').on("click", function (e) {
+      $(this).toggleClass('active');
+      $('#sourcemap-wrap').toggleClass('active');
+      resizeEditors();
+    });
 };
 
 /**

@@ -11,15 +11,15 @@
       <span class="info">
         For more information on how to convert SCSS and SASS in the browser using emscripted &amp; libsass see the <a href="https://github.com/medialize/sass.js/">Sass.js repository</a>.
       </span>
-      <br>
-      <span class="credits">
-        This fun was had by <a href="https://twitter.com/cjk101010">@cjk101010</a>, <a href="https://twitter.com/asciidisco">@asciidisco</a> and <a href="https://twitter.com/rodneyrehm">@rodneyrehm</a>.
-      </span>
     </p>
   </header>
   <nav>
     <button id="input-output-btn" class="active">
-      Edit
+      Editors
+    </button>
+    <button id="sourcemap-btn">
+      <i class="icon-file"></i>
+      Sourcemap
     </button>
     <button id="options-btn">
       <i class="icon-cog"></i>
@@ -31,6 +31,48 @@
     </button>
   </nav>
   <div id="playground">
+    <article id="input-output" class="active">
+      <h2 class="section-title">Sass.compile()</h2>
+      <div id="editors">
+        <section>
+          <h3 class="section-subtitle">Input</h3>
+          <div class="editor" id="input"></div>
+        </section>
+        <section>
+          <h3 class="section-subtitle">Output</h3>
+          <div class="editor" id="output"></div>
+        </section>
+      </div>
+      <button type="button" id="convert">
+        <i class="icon-process"></i>
+        Convert
+      </button>
+    </article>
+    <article id="sourcemap-wrap">
+      <h2 class="section-title">Sourcemaps</h2>
+      <section>
+        <h3 class="section-subtitle">SourceMap</h3>
+        <div class="editor" id="sourcemap"></div>
+      </section>
+    </article>
+  </div>
+  <div id="playground">
+    <article id="filesystem">
+      <h2 class="section-title">Filesystem</h2>
+      <div id="files">
+        <section>
+          <h3 class="section-subtitle">Files</h3>
+          <ul id="file_list"></ul>
+          <button type="button" id="new_file">add file</button>
+        </section>
+        <section>
+          <h3 class="section-subtitle">Add/Edit File</h3>
+          <input id="file_name" type="text" placeholder="filename">
+          <div class="editor" id="file_content"></div>
+          <button type="button" id="save_file">Save file</button>
+        </section>
+      </div>
+    </article>
     <article id="options-wrap">
       <h2 class="section-title">Sass.options()</h2>
       <div id="options">
@@ -127,43 +169,6 @@
           </select>
         </section>
       </div>
-    </article>
-    <article id="filesystem">
-      <h2 class="section-title">Filesystem</h2>
-      <div id="files">
-        <section>
-          <h3 class="section-subtitle">Files</h3>
-          <ul id="file_list"></ul>
-          <button type="button" id="new_file">add file</button>
-        </section>
-        <section>
-          <h3 class="section-subtitle">Add/Edit File</h3>
-          <input id="file_name" type="text" placeholder="filename">
-          <div class="editor" id="file_content"></div>
-          <button type="button" id="save_file">Save file</button>
-        </section>
-      </div>
-    </article>
-    <article id="input-output" class="active">
-      <h2 class="section-title">Sass.compile()</h2>
-      <div id="editors">
-        <section>
-          <h3 class="section-subtitle">Input</h3>
-          <div class="editor" id="input"></div>
-        </section>
-        <section>
-          <h3 class="section-subtitle">Output</h3>
-          <div class="editor" id="output"></div>
-        </section>
-        <section>
-          <h3 class="section-subtitle">SourceMap</h3>
-          <div class="editor" id="sourcemap"></div>
-        </section>
-      </div>
-      <button type="button" id="convert">
-        <i class="icon-process"></i>
-        Convert
-      </button>
     </article>
   </div>
 
