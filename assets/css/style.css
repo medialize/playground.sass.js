@@ -409,6 +409,18 @@ button {
   border: none;
   border-radius: 3px;
   border: 1px solid #888; }
+  button.success {
+    background: #686;
+    border-color: #686; }
+  button.primary {
+    background: #668;
+    border-color: #668; }
+  button.warning {
+    background: #884;
+    border-color: #884; }
+  button.error {
+    background: #844;
+    border-color: #844; }
   button:focus {
     outline: none; }
 
@@ -463,10 +475,10 @@ nav {
   display: flex;
   padding: 1rem 0 1rem 1rem; }
   .playground > article {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
     margin-right: 1rem;
     padding: 1rem;
     background: #fff;
@@ -506,6 +518,13 @@ nav {
   #sourcemap-wrap.active {
     display: block; }
 
+#filesystem,
+#sourcemap-wrap {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
 .section-title {
   font-size: 1rem;
   margin: -1rem;
@@ -518,23 +537,22 @@ nav {
   font-size: 0.75rem;
   margin-top: 0; }
 
-#editors,
-#files {
+#editors {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
-  #editors > section,
-  #files > section {
+  #editors > section {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
     padding-left: 1rem; }
-    #editors > section:first-child,
-    #files > section:first-child {
+    #editors > section:first-child {
       padding-left: 0; }
 
+#files section:not(:first-child) h3.section-subtitle {
+  margin-top: 1rem; }
 #files #file_list {
   margin-bottom: 0;
   padding: 0;
@@ -617,3 +635,6 @@ nav {
 
 .edit-file {
   padding-right: 0.3rem; }
+
+#convert {
+  margin-top: 1rem; }

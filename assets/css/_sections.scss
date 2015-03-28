@@ -12,8 +12,7 @@
     margin-top: 0;
 }
 
-#editors,
-#files {
+#editors {
   display: flex;
 
   & > section {
@@ -27,6 +26,12 @@
 }
 
 #files {
+  section:not(:first-child) {
+    h3.section-subtitle {
+      margin-top: 1rem;
+    }
+  }
+
   #file_list {
     margin-bottom: 0;
     padding: 0;
@@ -114,4 +119,8 @@
 
 .edit-file {
   padding-right: 0.3rem;
+}
+
+#convert{
+  margin-top: 1rem;
 }

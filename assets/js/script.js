@@ -145,7 +145,7 @@ var appInit = function () {
       item.attr('class', 'file');
       item.attr('id', file);
       item.data('file', file);
-      item.append('<i class="icon-file"></i><span class="file_title"></span><button type="button" class="edit-file"><i class="icon-pencil"></i></button><button type="button" class="remove-file"><i class="icon-trash"></i></button>');
+      item.append('<i class="icon-file"></i><span class="file_title"></span><button type="button" class="warning edit-file"><i class="icon-pencil"></i></button><button type="button" class="error remove-file"><i class="icon-trash"></i></button>');
       item.appendTo(files);
     }
 

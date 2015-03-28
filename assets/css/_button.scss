@@ -6,6 +6,26 @@
   border-radius: 3px;
   border: 1px solid #888;
 
+  &.success{
+    background: #686;
+    border-color: #686;
+  }
+
+  &.primary{
+    background: #668;
+    border-color: #668;
+  }
+
+  &.warning{
+    background: #884;
+    border-color: #884;
+  }
+
+  &.error{
+    background: #844;
+    border-color: #844;
+  }
+
   &:focus {
     outline: none;
   }
