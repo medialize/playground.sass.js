@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sass.js playground - emscripted libsass in the browser</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1 id="title">Sass.js Playground</h1>
+    <p id="subtitle">
+      <span class="info">
+        For more information on how to convert SCSS and SASS in the browser using emscripted &amp; libsass see the <a href="https://github.com/medialize/sass.js/">Sass.js repository</a>.
+      </span>
+    </p>
+  </header>
+  <nav>
+    <button id="input-output-btn" class="active">
+      Editors
+    </button>
+    <button id="filesystem-btn">
+      <i class="icon-file"></i>
+      Filesystem
+    </button>
+    <button id="sourcemap-btn">
+      <i class="icon-file"></i>
+      Sourcemap
+    </button>
+    <button id="options-btn">
+      <i class="icon-cog"></i>
+      Options
+    </button>
+  </nav>
+  <div class="playground">
+    <article id="options-wrap">
+      <h2 class="section-title">Sass.options()</h2>
+      <div id="options">
+        <section class="option">
+          <label for="options-style">style</label>
+          <select id="option-style">
+            <option value="0">nested</option>
+            <option value="1" selected="selected">expanded</option>
+            <option value="2">compact</option>
+            <option value="3">compressed</option>
+          </select>
+          <p class="comment">See <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style">documentation</a></p>
+        </section>
+        <section class="option">
+          <label for="option-comments">comments</label>
+          <select id="option-comments">
+            <option value="">none</option>
+            <option value="1">default</option>
+          </select>
+          <p class="comment">Emit comments in the generated CSS indicating the corresponding source line.</p>
+        </section>
+        <section class="option">
+          <label for="option-precision">precision</label>
+          <input id="option-precision" type="number" min="0" step="1" value="0">
+          <p class="comment">Precision for fractional numbers (<code>0</code>: libsass default)</p>
+        </section>
+        <section class="option">
+          <label for="option-indentedSyntax">indentedSyntax</label>
+          <select id="option-indentedSyntax">
+            <option value="" selected="selected">false (SCSS)</option>
+            <option value="1">true (SASS)</option>
+          </select>
+          <p class="comment">Treat source_string as SASS (as opposed to SCSS)</p>
+        </section>
+        <section class="option">
+          <label for="option-indent">indent</label>
+          <select id="option-indent">
+            <option value="  " selected="selected">2 Spaces</option>
+            <option value="    ">4 Spaces</option>
+            <option value="   ">Tab</option>
+          </select>
+          <p class="comment">String to be used for indentation</p>
+        </section>
+        <section class="option">
+          <label for="option-linefeed">linefeed</label>
+          <select id="option-linefeed">
+            <option value="\n" selected="selected">\n</option>
+            <option value="\r\n">\r\n</option>
+          </select>
+          <p class="comment">String to be used to for line feeds</p>
+        </section>
+        <section class="option">
+          <label for="option-sourceMapFile">sourceMapFile</label>
+          <input id="option-sourceMapFile" type="text" value="file">
+          <p class="comment">Path to source map file. Enables source map generation. Used to create sourceMappingUrl</p>
+        </section>
+        <section class="option">
+          <label for="option-sourceMapRoot">sourceMapRoot</label>
+          <input id="option-sourceMapRoot" type="text" value="root">
+          <p class="comment">Directly inserted in source maps</p>
+        </section>
+        <section class="option">
+          <label for="option-inputPath">inputPath</label>
+          <input id="option-inputPath" type="text" value="stdin">
+          <p class="comment">The input path is used for source map generation. It can be used to define something with string compilation or to overload the input file path. It is set to <code>stdin</code> for data contexts and to the <var>input file</var> on file contexts.</p>
+        </section>
+        <section class="option">
+          <label for="option-outputPath">outputPath</label>
+          <input id="option-outputPath" type="text" value="stdout">
+          <p class="comment">The output path is used for source map generation. Libsass will not write to this file, it is just used to create information in source-maps etc.</p>
+        </section>
+        <section class="option">
+          <label for="option-sourceMapContents">sourceMapContents</label>
+          <select id="option-sourceMapContents">
+            <option value="">false</option>
+            <option value="1" selected="selected">true</option>
+          </select>
+          <p class="comment">Embed include contents in source maps</p>
+        </section>
+        <section class="option">
+          <label for="option-sourceMapEmbed">sourceMapEmbed</label>
+          <select id="option-sourceMapEmbed">
+            <option value="">false</option>
+            <option value="1" selected="selected">true</option>
+          </select>
+          <p class="comment">Embed sourceMappingUrl as data URI</p>
+        </section>
+        <section class="option">
+          <label for="option-sourceMapOmitUrl">sourceMapOmitUrl</label>
+          <select id="option-sourceMapOmitUrl">
+            <option value="">false</option>
+            <option value="1" selected="selected">true</option>
+          </select>
+          <p class="comment">Disable sourceMappingUrl in CSS output</p>
+        </section>
+      </div>
+    </article>
+  </div>
+  <div class="playground">
+    <article id="input-output" class="active">
+      <h2 class="section-title">Sass.compile()</h2>
+      <div id="editors">
+        <section>
+          <h3 class="section-subtitle">Input</h3>
+          <div class="editor" id="input"></div>
+        </section>
+        <section>
+          <h3 class="section-subtitle">Output</h3>
+          <div class="editor" id="output"></div>
+        </section>
+      </div>
+      <button type="button" class="success" id="convert">
+        <i class="icon-process"></i>
+        Convert
+      </button>
+    </article>
+    <article id="filesystem">
+      <h2 class="section-title">Filesystem</h2>
+      <div id="files">
+        <section>
+          <h3 class="section-subtitle">Files</h3>
+          <ul id="file_list"></ul>
+          <button type="button" class="primary" id="new_file">add file</button>
+        </section>
+        <section>
+          <h3 class="section-subtitle">Add/Edit File</h3>
+          <input id="file_name" type="text" placeholder="filename">
+          <div class="editor" id="file_content"></div>
+          <button type="button" class="primary" id="save_file">Save file</button>
+        </section>
+      </div>
+    </article>
+    <article id="sourcemap-wrap">
+      <h2 class="section-title">Sourcemaps</h2>
+      <section>
+        <h3 class="section-subtitle">SourceMap</h3>
+        <div class="editor" id="sourcemap"></div>
+      </section>
+    </article>
+  </div>
+
+  <script src="js/sass.js/sass.worker.js"></script>
+  <script src="js/ace/ace.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
