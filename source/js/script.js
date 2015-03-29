@@ -3,7 +3,7 @@
  * @param  {Object} editor An ace.js editor
  */
 var resetCursor = function (editor) {
-    editor.selection.moveCursorFileStart();
+  editor.selection.moveCursorFileStart();
 };
 
 /**
@@ -28,7 +28,7 @@ var editorInit = function () {
 
   editors.list.forEach(function (editor) {
     editors[editor] = ace.edit(editor);
-    editors[editor].setTheme("ace/theme/tomorrow");
+    editors[editor].setTheme('ace/theme/tomorrow');
     editors[editor].getSession().setMode('ace/mode/scss');
     editors[editor].getSession().setUseWrapMode(true);
     editors[editor].$blockScrolling = Infinity;
@@ -42,25 +42,25 @@ var editorInit = function () {
  * Attaches event listeners to the actionbar
  */
 var actionbarInit = function () {
-    $('#options-btn').on("click", function (e) {
+  $('#options-btn').on('click', function (e) {
       $(this).toggleClass('active');
       $('#options-wrap').toggleClass('active');
       resizeEditors();
     });
 
-    $('#filesystem-btn').on("click", function (e) {
+  $('#filesystem-btn').on('click', function (e) {
       $(this).toggleClass('active');
       $('#filesystem').toggleClass('active');
       resizeEditors();
     });
 
-    $('#input-output-btn').on("click", function (e) {
+  $('#input-output-btn').on('click', function (e) {
       $(this).toggleClass('active');
       $('#input-output').toggleClass('active');
       resizeEditors();
     });
 
-    $('#sourcemap-btn').on("click", function (e) {
+  $('#sourcemap-btn').on('click', function (e) {
       $(this).toggleClass('active');
       $('#sourcemap-wrap').toggleClass('active');
       resizeEditors();
@@ -73,7 +73,7 @@ var actionbarInit = function () {
 var appInit = function () {
   Sass.initialize('js/sass.js/worker.js');
 
-  function getOptions() {
+  function getOptions () {
     var options = {};
 
     var elements = $('#options input, #options select');
@@ -89,7 +89,7 @@ var appInit = function () {
     // fix line breaks
     options.linefeed = ({
       '\\n': '\n',
-      '\\r\\n': '\r\n',
+      '\\r\\n': '\r\n'
     })[options.linefeed];
 
     return options;
@@ -103,7 +103,7 @@ var appInit = function () {
   convert.on('click', function (e) {
     convert.prop('disabled', false);
 
-    Sass.options(getOptions(), function() {
+    Sass.options(getOptions(), function () {
       Sass.compile(editors.input.getValue(), function (result) {
         if (result.status) {
           var formatted = result.formatted;
@@ -155,17 +155,17 @@ var appInit = function () {
     return item;
   }
 
-  editSave.on('click', function(e) {
+  editSave.on('click', function (e) {
     writeFile(editFile.val(), editors.file_content.getValue());
   });
 
-  editNew.on('click', function(e) {
+  editNew.on('click', function (e) {
     editFile.val('');
     editors.file_content.setValue('');
     resetCursor(editors.file_content);
   });
 
-  files.on('click', function(e) {
+  files.on('click', function (e) {
     var target = $(e.target).is('button') || $(e.target).parent('button');
     if (target.hasClass('edit-file')) {
       readFile(target.parent());
@@ -174,7 +174,7 @@ var appInit = function () {
     }
   });
 
-  var _demoFiles = [{
+  var demoFiles = [{
       name: '_variables.scss',
       content: '$brandColor: #f60;\n$size: 1em;'
     }, {
@@ -182,8 +182,8 @@ var appInit = function () {
       content: '.imported {\n  content: "yay, file support!";\n}'
     }];
 
-    _demoFiles.forEach(function (_demoFile) {
-      var _demoItem = writeFile(_demoFile.name, _demoFile.content);
+  demoFiles.forEach(function (demoFile) {
+      var demoItem = writeFile(demoFile.name, demoFile.content);
     });
 };
 
