@@ -15,7 +15,7 @@ module.exports = function (grunt) {
   grunt.registerTask('js', ['concat', 'copy']);
 
   grunt.registerTask('build', ['html', 'css', 'js']);
-  grunt.registerTask('deploy', ['build', 'buildcontrol:ghpages']);
+  grunt.registerTask('deploy', ['build', 'gh-pages']);
 
   grunt.registerTask('default', ['build']);
 }
