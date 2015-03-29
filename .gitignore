@@ -4,3 +4,4 @@ assets/libs/
 node_modules
 bower_components
 /dist
+.grunt
