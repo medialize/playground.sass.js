@@ -468,7 +468,7 @@ nav {
   nav button {
     display: block;
     float: left;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     -webkit-transition: box-shadow 250ms;
             transition: box-shadow 250ms; }
     nav button:hover {
