@@ -151,6 +151,12 @@ var appInit = function () {
   function removeFile (fileNode) {
     Sass.removeFile($(fileNode).data('file'));
     $(fileNode).remove();
+
+    editFile.val('');
+    editors.file_content.setValue('');
+
+    clearSelected();
+    setSaveMessage('Create');
   }
 
   function writeFile (file, content) {
