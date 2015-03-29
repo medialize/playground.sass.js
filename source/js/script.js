@@ -140,6 +140,13 @@ var appInit = function () {
     editSave.text(msg + ' file');
   }
 
+  function getSelectedElement () {
+    var id = editFile.val();
+    var el = document.getElementById(id);
+
+    return el;
+  }
+
   function readFile (fileNode) {
     setSelected(fileNode);
 
@@ -179,8 +186,7 @@ var appInit = function () {
   }
 
   editFile.on('input', function (e) {
-    var id = $(this).val();
-    var el = document.getElementById(id);
+    var el = getSelectedElement();
 
     if (el) {
       setSelected(el);
@@ -193,6 +199,12 @@ var appInit = function () {
   editSave.on('click', function (e) {
     if (editFile.val()) {
       writeFile(editFile.val(), editors.file_content.getValue());
+
+      var el = getSelectedElement();
+
+      if (el) {
+        setSelected(el);
+      }
     }
   });
 
