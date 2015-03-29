@@ -582,6 +582,10 @@ nav {
   background: #eee;
   border: 1px solid #ddd;
   border-bottom: none; }
+  .file.selected {
+    color: #fff;
+    background: #686;
+    border-color: #686; }
   .file button {
     margin-left: 0.5rem; }
   .file .icon-file {

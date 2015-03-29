@@ -129,7 +129,24 @@ var appInit = function () {
   var editFile = $('#file_name');
   var editSave = $('#save_file');
 
+  function clearSelected () {
+    $('.file').removeClass('selected');
+  }
+
+  function setSelected (el) {
+    clearSelected();
+    $(el).addClass('selected');
+
+    setSaveMessage('Save');
+  }
+
+  function setSaveMessage (msg) {
+    editSave.text(msg + ' file');
+  }
+
   function readFile (fileNode) {
+    setSelected(fileNode);
+
     editFile.val($(fileNode).data('file'));
     editors.file_content.setValue($(fileNode).data('content'));
     resetCursor(editors.file_content);
@@ -159,8 +176,22 @@ var appInit = function () {
     return item;
   }
 
+  editFile.on('input', function (e) {
+    var id = $(this).val();
+    var el = document.getElementById(id);
+
+    if (el) {
+      setSelected(el);
+    } else {
+      clearSelected();
+      setSaveMessage('Create');
+    }
+  });
+
   editSave.on('click', function (e) {
-    writeFile(editFile.val(), editors.file_content.getValue());
+    if (editFile.val()) {
+      writeFile(editFile.val(), editors.file_content.getValue());
+    }
   });
 
   editNew.on('click', function (e) {
@@ -170,7 +201,8 @@ var appInit = function () {
   });
 
   files.on('click', function (e) {
-    var target = $(e.target).is('button') || $(e.target).parent('button');
+    var target = $(e.target).is('button') ? $(e.target) : $(e.target).parent('button');
+
     if (target.hasClass('edit-file')) {
       readFile(target.parent());
     } else if (target.hasClass('remove-file')) {
