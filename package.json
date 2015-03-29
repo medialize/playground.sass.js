@@ -25,6 +25,7 @@
     "grunt-autoprefixer": "~2.2.0",
     "grunt-contrib-concat": "~0.5.1",
     "grunt-contrib-htmlmin": "~0.4.0",
-    "grunt-contrib-copy": "~0.8.0"
+    "grunt-contrib-copy": "~0.8.0",
+    "grunt-gh-pages": "~0.10.0"
   }
 }

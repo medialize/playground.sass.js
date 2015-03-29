@@ -1,7 +1,6 @@
 module.exports = function (grunt) {
   // require grunt tasks automatically
   require('load-grunt-tasks')(grunt);
-  grunt.loadNpmTasks('grunt-gh-pages');
 
   var configs = require('load-grunt-configs')(grunt, {
     config: {
