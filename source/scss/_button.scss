@@ -1,10 +1,10 @@
 @mixin button {
   padding: 0.25rem 0.5rem;
   color: #fff;
-  background: #999;
+  background: #777;
   border: none;
   border-radius: 3px;
-  border: 1px solid #888;
+  border: 1px solid #666;
 
   &.success{
     background: #686;

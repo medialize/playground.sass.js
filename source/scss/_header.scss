@@ -10,10 +10,11 @@ header {
 }
 
 #subtitle {
+  display: flex;
+  align-items: center;
   flex: 1;
   margin: 0;
   padding: 1rem;
-  line-height: 2;
   color: #666;
   background: #fff;
   border-left: 1px solid #ddd;
@@ -21,21 +22,26 @@ header {
 
 nav {
   @include clearfix;
-  border-top: 1px solid #ddd;
+  background: #399;
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
 
   button {
     display: block;
     float: left;
     margin-left: 0.5rem;
-    margin-top: -1px;
-    border-top: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    box-shadow: 0 0 3px #666;
+    transition: box-shadow 250ms;
+
+    &:hover{
+      box-shadow: 0 0 5px #444;
+    }
 
     &.active {
-      color: #eee;
-      background-color: #779;
-      border-color: #668;
+      color: #333;
+      background-color: #fff;
+      border-color: #fff;
     }
   }
 }

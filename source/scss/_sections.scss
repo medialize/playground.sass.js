@@ -26,9 +26,13 @@
 }
 
 #files {
-  section:not(:first-child) {
-    h3.section-subtitle {
-      margin-top: 1rem;
+  display: flex;
+
+  section {
+    flex: 1;
+
+    &:not(:first-child) {
+      padding-left: 1rem;
     }
   }
 

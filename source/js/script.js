@@ -43,6 +43,8 @@ var editorInit = function () {
  */
 var actionbarInit = function () {
   $('#options-btn').on('click', function (e) {
+      $('.playground').first().toggle();
+
       $(this).toggleClass('active');
       $('#options-wrap').toggleClass('active');
       resizeEditors();
@@ -51,12 +53,6 @@ var actionbarInit = function () {
   $('#filesystem-btn').on('click', function (e) {
       $(this).toggleClass('active');
       $('#filesystem').toggleClass('active');
-      resizeEditors();
-    });
-
-  $('#input-output-btn').on('click', function (e) {
-      $(this).toggleClass('active');
-      $('#input-output').toggleClass('active');
       resizeEditors();
     });
 
