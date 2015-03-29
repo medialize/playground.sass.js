@@ -63,6 +63,12 @@
   border: 1px solid #ddd;
   border-bottom: none;
 
+  &.selected{
+    color: #fff;
+    background: #686;
+    border-color: #686;
+  }
+
   button {
     margin-left: 0.5rem;
   }
