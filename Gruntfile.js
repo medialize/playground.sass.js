@@ -9,7 +9,7 @@ module.exports = function (grunt) {
   });
   grunt.initConfig(configs);
 
-  grunt.registerTask('html', ['htmlmin']);
+  grunt.registerTask('html', ['replace', 'htmlmin']);
   grunt.registerTask('css', ['sass:dev', 'autoprefixer:dev']);
   grunt.registerTask('js', ['concat', 'copy']);
 
