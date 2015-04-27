@@ -1,2 +1,3 @@
-# sass.js-playground
-This is sass.js' playground, temporary hosted under my github profile until it's mature enough to be moved to the proper organization.
+# Sass.js Playground
+
+This is an [interactive playground](http://medialize.github.io/playground.sass.js/) featuring the [Sass.js](https://github.com/medialize/sass.js) API.
