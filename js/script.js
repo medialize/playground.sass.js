@@ -71,7 +71,7 @@ var actionbarInit = function () {
  * initializes the Sass.js specific parts
  */
 var appInit = function () {
-  Sass.initialize('js/sass.js/worker.js');
+  Sass.initialize('js/sass.js/sass.worker.js');
 
   function getOptions () {
     var options = {};
@@ -219,7 +219,7 @@ var appInit = function () {
 
     if (target.hasClass('edit-file')) {
       readFile(target.parent());
-    } else if (target.hasClass('remove-file')) {
+    } else if (target.hasClass('remove-file') && confirm('Are you sure you want to delete this file?')) {
       removeFile(target.parent());
     }
   });

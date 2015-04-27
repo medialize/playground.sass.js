@@ -359,6 +359,7 @@ th {
   src: url("../fonts/icomoon.eot?#iefix-6ol4mi") format("embedded-opentype"), url("../fonts/icomoon.woff?-6ol4mi") format("woff"), url("../fonts/icomoon.ttf?-6ol4mi") format("truetype"), url("../fonts/icomoon.svg?-6ol4mi#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: 'icomoon';
