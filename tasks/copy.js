@@ -13,7 +13,7 @@ module.exports = {
   },
   ace: {
     expand: true,
-    cwd: 'source/js/ace',
+    cwd: 'node_modules/ace-builds/src-min/',
     src: '**',
     dest: 'dist/js/ace'
   }
