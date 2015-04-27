@@ -215,7 +215,7 @@ var appInit = function () {
 
     if (target.hasClass('edit-file')) {
       readFile(target.parent());
-    } else if (target.hasClass('remove-file')) {
+    } else if (target.hasClass('remove-file') && confirm('Are you sure you want to delete this file?')) {
       removeFile(target.parent());
     }
   });
