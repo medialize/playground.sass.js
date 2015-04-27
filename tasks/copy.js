@@ -7,7 +7,7 @@ module.exports = {
   },
   sassjs: {
     expand: true,
-    cwd: 'source/js/sass.js',
+    cwd: 'node_modules/sass.js/dist/',
     src: '**',
     dest: 'dist/js/sass.js'
   },
