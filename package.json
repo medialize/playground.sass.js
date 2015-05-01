@@ -1,6 +1,6 @@
 {
   "name": "sass.js-playground",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Interactive playground featuring the Sass.js API",
   "main": "index.js",
   "scripts": {
