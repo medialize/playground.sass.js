@@ -67,7 +67,7 @@ var actionbarInit = function () {
  * initializes the Sass.js specific parts
  */
 var appInit = function () {
-  Sass.initialize('js/sass.js/sass.worker.js');
+  var sass = window.sass = new Sass();
 
   function getOptions () {
     var options = {};
@@ -99,8 +99,8 @@ var appInit = function () {
   convert.on('click', function (e) {
     convert.prop('disabled', false);
 
-    Sass.options(getOptions(), function () {
-      Sass.compile(editors.input.getValue(), function (result) {
+    sass.options(getOptions(), function () {
+      sass.compile(editors.input.getValue(), function (result) {
         if (result.status) {
           var formatted = result.formatted;
           delete result.formatted;
@@ -152,7 +152,7 @@ var appInit = function () {
   }
 
   function removeFile (fileNode) {
-    Sass.removeFile($(fileNode).data('file'));
+    sass.removeFile($(fileNode).data('file'));
     $(fileNode).remove();
 
     editFile.val('');
@@ -177,7 +177,7 @@ var appInit = function () {
 
     item.find('.file_title').text(file);
     item.data('content', content);
-    Sass.writeFile(file, content);
+    sass.writeFile(file, content);
     return item;
   }
 
