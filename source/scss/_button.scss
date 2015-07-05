@@ -17,13 +17,14 @@
   }
 
   &.warning{
-    background: #884;
-    border-color: #884;
+    color: #222;
+    background: #ff9;
+    border-color: #dd9;
   }
 
   &.error{
-    background: #844;
-    border-color: #844;
+    background: #b55;
+    border-color: #a55;
   }
 
   &:focus {
