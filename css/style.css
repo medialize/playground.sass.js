@@ -359,7 +359,6 @@ th {
   src: url("../fonts/icomoon.eot?#iefix-6ol4mi") format("embedded-opentype"), url("../fonts/icomoon.woff?-6ol4mi") format("woff"), url("../fonts/icomoon.ttf?-6ol4mi") format("truetype"), url("../fonts/icomoon.svg?-6ol4mi#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: 'icomoon';
@@ -417,11 +416,12 @@ button {
     background: #668;
     border-color: #668; }
   button.warning {
-    background: #884;
-    border-color: #884; }
+    color: #222;
+    background: #ff9;
+    border-color: #dd9; }
   button.error {
-    background: #844;
-    border-color: #844; }
+    background: #b55;
+    border-color: #a55; }
   button:focus {
     outline: none; }
 
@@ -608,9 +608,8 @@ nav {
   border: 1px solid #ddd;
   border-bottom: none; }
   .file.selected {
-    color: #fff;
-    background: #686;
-    border-color: #686; }
+    color: #222;
+    background: #fff; }
   .file button {
     margin-left: 0.5rem; }
   .file .icon-file {
