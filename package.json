@@ -1,6 +1,6 @@
 {
   "name": "sass.js-playground",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Interactive playground featuring the Sass.js API",
   "main": "index.js",
   "scripts": {
@@ -35,6 +35,6 @@
     "grunt-replace": "^0.8.0",
     "load-grunt-configs": "~0.4.2",
     "load-grunt-tasks": "~3.1.0",
-    "sass.js": "0.9.3"
+    "sass.js": "0.9.4"
   }
 }
