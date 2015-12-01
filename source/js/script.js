@@ -28,6 +28,7 @@ var editorInit = function () {
 
   editors.list.forEach(function (editor) {
     editors[editor] = ace.edit(editor);
+    editors[editor].setOption('fontSize', '16px');
     editors[editor].setTheme('ace/theme/tomorrow');
     editors[editor].getSession().setMode('ace/mode/scss');
     editors[editor].getSession().setUseWrapMode(true);
