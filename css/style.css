@@ -359,7 +359,6 @@ th {
   src: url("../fonts/icomoon.eot?#iefix-6ol4mi") format("embedded-opentype"), url("../fonts/icomoon.woff?-6ol4mi") format("woff"), url("../fonts/icomoon.ttf?-6ol4mi") format("truetype"), url("../fonts/icomoon.svg?-6ol4mi#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: 'icomoon';
@@ -404,7 +403,7 @@ a {
     text-decoration: underline; }
 
 button {
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 1rem;
   color: #fff;
   background: #777;
   border: none;
@@ -430,13 +429,13 @@ header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  background-color: #399; }
 
 #title {
   margin: 0;
   padding: 1rem;
-  color: #222;
-  background: #fff; }
+  color: #fff; }
 
 #subtitle {
   display: -webkit-box;
@@ -453,12 +452,15 @@ header {
           flex: 1;
   margin: 0;
   padding: 1rem;
-  color: #666;
-  background: #fff;
-  border-left: 1px solid #ddd; }
+  color: #fff;
+  border-left: 1px solid rgba(255, 255, 255, 0.15); }
+  #subtitle a, #subtitle a:visited {
+    color: #fff; }
+  #subtitle a:hover {
+    color: #fff; }
 
 nav {
-  background: #399;
+  background: #84bebe;
   margin: 0;
   margin-bottom: 1rem;
   padding: 1rem; }
@@ -472,13 +474,16 @@ nav {
     float: left;
     margin-right: 0.5rem;
     -webkit-transition: box-shadow 250ms;
-            transition: box-shadow 250ms; }
+            transition: box-shadow 250ms;
+    color: #333;
+    background-color: #fff;
+    border-color: #fff; }
     nav button:hover {
       box-shadow: 0 0 5px #444; }
     nav button.active {
-      color: #333;
-      background-color: #fff;
-      border-color: #fff; }
+      color: #fff;
+      background-color: #FF7F50;
+      border-color: #FF7F50; }
 
 .playground {
   display: -webkit-box;
@@ -614,8 +619,8 @@ nav {
   .file button {
     margin-left: 0.5rem; }
   .file .icon-file {
-    padding: 0.25rem 0;
-    padding-right: 0.5rem; }
+    padding: 0.5rem 0;
+    padding-right: 1rem; }
   .file .icon-file,
   .file span {
     line-height: 1.5; }
@@ -624,7 +629,7 @@ nav {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    padding: 0.25rem 0; }
+    padding: 0.5rem 0; }
 
 .editor {
   box-sizing: border-box;
@@ -660,7 +665,7 @@ nav {
     opacity: 0.6; }
 
 .edit-file {
-  padding-right: 0.3rem; }
+  padding-right: 0.75rem; }
 
 #convert {
   margin-top: 1rem; }
