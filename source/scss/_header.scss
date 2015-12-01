@@ -1,12 +1,12 @@
 header {
   display: flex;
+  background-color: #399;
 }
 
 #title {
   margin: 0;
   padding: 1rem;
-  color: #222;
-  background: #fff;
+  color: #fff;
 }
 
 #subtitle {
@@ -15,14 +15,24 @@ header {
   flex: 1;
   margin: 0;
   padding: 1rem;
-  color: #666;
-  background: #fff;
-  border-left: 1px solid #ddd;
+  color: #fff;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+
+  a {
+    &,
+    &:visited {
+      color: #fff;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 
 nav {
   @include clearfix;
-  background: #399;
+  background: #84bebe;
   margin: 0;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -32,15 +42,18 @@ nav {
     float: left;
     margin-right: 0.5rem;
     transition: box-shadow 250ms;
+    color: #333;
+    background-color: #fff;
+    border-color: #fff;
 
     &:hover{
       box-shadow: 0 0 5px #444;
     }
 
     &.active {
-      color: #333;
-      background-color: #fff;
-      border-color: #fff;
+      color: #fff;
+      background-color: #FF7F50;
+      border-color: #FF7F50;
     }
   }
 }
