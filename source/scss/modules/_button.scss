@@ -1,5 +1,5 @@
 @mixin button {
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 1rem;
   color: #fff;
   background: #777;
   border: none;
@@ -32,7 +32,7 @@
   }
 }
 
-@mixin wideAttachedButton{
+@mixin wideAttachedButton {
   width: 100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;

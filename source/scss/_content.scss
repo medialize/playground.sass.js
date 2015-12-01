@@ -1,6 +1,7 @@
-@import "_clearfix";
-@import "_fonts";
-@import "_button";
+@import "helpers/_normalize";
+@import "helpers/_clearfix";
+@import "modules/_fonts";
+@import "modules/_button";
 
 body {
   overflow-x: auto;
