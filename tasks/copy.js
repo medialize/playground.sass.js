@@ -16,5 +16,11 @@ module.exports = {
     cwd: 'node_modules/ace-builds/src-min/',
     src: '**',
     dest: 'dist/js/ace'
+  },
+  cname: {
+    expand: true,
+    cwd: 'source/',
+    src: 'CNAME',
+    dest: 'dist/'
   }
 };
