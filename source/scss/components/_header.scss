@@ -5,6 +5,7 @@ header {
 }
 
 #logo {
+  display: none;
   @include height-hack(100%);
   float: left;
   width: 6em;
@@ -23,6 +24,7 @@ header {
 
 #subtitle {
   margin: 0;
+  margin-bottom: 0.5em;
   padding: 0 1em;
   font-size: 1em;
   font-weight: normal;
