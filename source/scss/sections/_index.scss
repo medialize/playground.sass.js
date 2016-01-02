@@ -1,6 +1,7 @@
 @import "_editors";
 @import "_filesystem";
 @import "_options";
+@import "_information";
 
 .section-title {
   font-size: 1em;
@@ -38,10 +39,11 @@
   margin-top: 1em;
 }
 
-.close-options-fixed {
+.close-options-fixed,
+.close-information-fixed {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.5em;
+  right: 0.5em;
   padding: 1em;
   line-height: 1;
   font-family: monospace;

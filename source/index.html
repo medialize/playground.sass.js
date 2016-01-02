@@ -20,35 +20,6 @@
       </a>
     </div>
   </header>
-  <div id="subheader">
-    <div>
-      <h3>
-        <a target="_blank" href="https://github.com/medialize/sass.js/#sassjs">Sass.js</a>
-        <a target="_blank" class="lib_version" href="https://github.com/medialize/sass.js/releases/@@sassjs.version" title="commit @@sassjs.commit">@@sassjs.version</a>
-      </h3>
-      <p>
-        Sass.js is made by Emscripting libSass. A convenience API for compiling Sass via Javascript.
-      </p>
-    </div>
-    <div>
-      <h3>
-        <a target="_blank" href="http://sass-lang.com/libsass">libSass</a>
-        <a target="_blank" class="lib_version" href="https://github.com/sass/libsass/releases/@@libsass.version" title="commit @@libsass.commit">@@libsass.version</a>
-      </h3>
-      <p>
-        libSass is a C/C++ port of the Sass engine. The point is to be simple, faster, and easy to integrate.
-      </p>
-     </div>
-     <div>
-      <h3>
-        <a target="_blank" href="http://emscripten.org">Emscripten</a>
-        <a target="_blank" class="lib_version" href="https://github.com/kripken/emscripten/releases/@@emscripten.version" title="commit @@emscripten.commit">@@emscripten.version</a>
-      </h3>
-      <p>
-        Emscripten is an LLVM-based project that compiles C/C++ into highly-optimizable JS in asm format.
-      </p>
-    </div>
-  </div>
   <nav>
     <button id="filesystem-btn">
       <i class="icon-file"></i>
@@ -58,10 +29,56 @@
       <i class="icon-file"></i>
       Sourcemap
     </button>
-    <button class="close-options">
+    <button class="right-side close-options">
       <i class="icon-cog"></i>
     </button>
+    <button class="right-side close-information">
+      <i class="icon-info"></i>
+    </button>
   </nav>
+  <div id="information-container">
+    <div id="information-wrap">
+      <h2 class="section-title">Sass.info()</h2>
+      <button class="close-information close-information-fixed">&#x2716;</button>
+      <footer>
+        <p class="sassjsapi">
+          More about the Sass.js API can be found <a href="https://github.com/medialize/sass.js/#using-the-sassjs-api">here</a>.
+        </p>
+        <p class="contribute">
+          If you are interested in contributing or reporting bugs, visit either <a href="https://github.com/medialize/playground.sass.js/">playground.sass.js</a> or <a href="https://github.com/medialize/sass.js/">sass.js</a> repos in github.
+        </p>
+        <div class="builtwith">
+          <div>
+            <h3>
+              <a target="_blank" href="https://github.com/medialize/sass.js/#sassjs">Sass.js</a>
+              <a target="_blank" class="lib_version" href="https://github.com/medialize/sass.js/releases/@@sassjs.version" title="commit @@sassjs.commit">v@@sassjs.version</a>
+            </h3>
+            <p>
+              Sass.js is made by Emscripting libSass. A convenience API for compiling Sass via Javascript.
+            </p>
+          </div>
+          <div>
+            <h3>
+              <a target="_blank" href="http://sass-lang.com/libsass">libSass</a>
+              <a target="_blank" class="lib_version" href="https://github.com/sass/libsass/releases/@@libsass.version" title="commit @@libsass.commit">v@@libsass.version</a>
+            </h3>
+            <p>
+              libSass is a C/C++ port of the Sass engine. The point is to be simple, faster, and easy to integrate.
+            </p>
+          </div>
+          <div>
+            <h3>
+              <a target="_blank" href="http://emscripten.org">Emscripten</a>
+              <a target="_blank" class="lib_version" href="https://github.com/kripken/emscripten/releases/@@emscripten.version" title="commit @@emscripten.commit">v@@emscripten.version</a>
+            </h3>
+            <p>
+              Emscripten is an LLVM-based project that compiles C/C++ into highly-optimizable JS in asm format.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
   <div id="options-container">
     <div id="options-wrap">
       <h2 class="section-title">Sass.options()</h2>

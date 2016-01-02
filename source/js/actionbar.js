@@ -18,6 +18,18 @@ var init = function () {
     $('#options-container').toggleClass('active');
   });
 
+  $('.close-information').on('click', function (e) {
+    $('#information-container').toggleClass('active');
+  });
+
+  $('#information-container').on('click', function (e) {
+    if (e.target != this) {
+      return;
+    }
+
+    $('#information-container').toggleClass('active');
+  });
+
   $('#filesystem-btn').on('click', function (e) {
     $(this).toggleClass('active');
     $('#filesystem').toggleClass('active');
