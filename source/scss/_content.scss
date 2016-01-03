@@ -1,11 +1,11 @@
-@import "helpers/_normalize";
-@import "helpers/_clearfix";
-@import "modules/_fonts";
-@import "modules/_button";
+html {
+  height: 100%;
+}
 
 body {
-  overflow-x: auto;
-  overflow-y: scroll;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: #eee;
 }
 

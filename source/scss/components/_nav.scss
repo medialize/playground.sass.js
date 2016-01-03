@@ -1,0 +1,36 @@
+nav {
+  @include clearfix;
+  margin: 0;
+  padding: 1em;
+  padding-top: 0;
+
+  button {
+    display: block;
+    float: left;
+    margin-right: 1em;
+    transition: box-shadow 250ms, color 250ms;
+    color: #999;
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, #feffff 0%,#f7f7f7 35%,#ededed 100%);
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 0 5px #aaa;
+
+    &:hover{
+      color: #666;
+      box-shadow: 0 0 5px #777;
+    }
+
+    &.active {
+      color: #333;
+      box-shadow: 0 0 5px #444;
+    }
+  }
+
+  .close-options {
+    color: #666;
+    float: right;
+    margin-right: 0;
+  }
+}

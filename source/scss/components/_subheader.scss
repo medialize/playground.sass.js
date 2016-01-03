@@ -1,0 +1,22 @@
+#subheader {
+  position: relative;
+  display: flex;
+  padding: 0 1em;
+  font-size: 0.75em;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #567;
+
+  h3 {
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  div {
+    flex: 1;
+  }
+
+  a {
+    color: #fff;
+  }
+}

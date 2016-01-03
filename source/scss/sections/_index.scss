@@ -1,0 +1,58 @@
+@import "_editors";
+@import "_filesystem";
+@import "_options";
+
+.section-title {
+  font-size: 1em;
+  margin: -1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.section-subtitle {
+  font-size: 0.75em;
+    margin-top: 0;
+}
+
+.playground {
+  flex: 1;
+  display: flex;
+  padding: 0 0 1em 1em;
+
+  &.hidden {
+    display: none;
+  }
+
+  & > article {
+    flex: 2;
+    margin-right: 1em;
+    padding: 1em;
+    background: #fff;
+    outline: 1px solid #ddd;
+  }
+}
+
+#convert{
+  margin-top: 1em;
+}
+
+.close-options-fixed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  line-height: 1;
+  font-family: monospace;
+  vertical-align: middle;
+  color: #444;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  border-radius: 0;
+}
+
+.errorHighlight {
+  position:absolute;
+  background-color: rgba(255, 0, 0, 0.2);
+}
