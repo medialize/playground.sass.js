@@ -10,8 +10,8 @@ module.exports = function (grunt) {
   grunt.initConfig(configs);
 
   grunt.registerTask('html', ['replace', 'htmlmin']);
-  grunt.registerTask('js', ['concat', 'copy']);
   grunt.registerTask('css', ['sass', 'postcss']);
+  grunt.registerTask('js', ['webpack', 'copy']);
 
   grunt.registerTask('build', ['html', 'css', 'js']);
   grunt.registerTask('deploy', ['build', 'gh-pages']);
