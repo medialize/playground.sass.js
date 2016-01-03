@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/medialize/playground.sass.js",
   "devDependencies": {
-    "ace-builds": "git://github.com/ajaxorg/ace-builds.git#v1.1.9",
+    "ace-builds": "git://github.com/ajaxorg/ace-builds.git#v1.2.2",
     "autoprefixer": "^6.2.1",
     "grunt": "~0.4.5",
     "grunt-contrib-concat": "~0.5.1",
