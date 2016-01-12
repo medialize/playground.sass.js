@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Sass.js playground - emscripted libsass in the browser</title>
+  <title>Sass.js Playground - emscripted libsass in the browser</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1 id="title">Sass.js Playground</h1>
-    <p id="subtitle">
-      <span class="info">
-        <a href="https://github.com/medialize/sass.js/#sassjs">Sass.js</a> <a href="https://github.com/medialize/sass.js/releases/0.9.4" title="commit bfade3e">0.9.4</a>,
-        <a href="http://sass-lang.com/libsass">libsass</a> <a href="https://github.com/sass/libsass/releases/3.3.1" title="commit 42e22fb">3.3.1</a>,
-        <a href="http://emscripten.org">emscripten</a> <a href="https://github.com/kripken/emscripten/releases/1.35.4" title="commit e37f843">1.35.4</a>
-      </span>
-    </p>
+    <!-- <div id="logo"></div> -->
+    <h1 id="title">
+      Sass.js
+    </h1>
+    <h2 id="subtitle">
+      an online Playground for Sass.js
+    </h2>
+    <div id="sourcecode">
+      <a href="https://github.com/medialize/playground.sass.js/" target="_blank">
+        <i class="icon-github"></i>
+      </a>
+    </div>
   </header>
   <nav>
     <button id="filesystem-btn">
@@ -25,14 +29,60 @@
       <i class="icon-file"></i>
       Sourcemap
     </button>
-    <button id="options-btn">
+    <button class="right-side close-options">
       <i class="icon-cog"></i>
-      Options
+    </button>
+    <button class="right-side close-information">
+      <i class="icon-info"></i>
     </button>
   </nav>
-  <div class="playground hidden">
-    <article id="options-wrap">
+  <div id="information-container">
+    <div id="information-wrap">
+      <h2 class="section-title">Sass.info()</h2>
+      <button class="close-information close-information-fixed">&#x2716;</button>
+      <footer>
+        <p class="sassjsapi">
+          More about the Sass.js API can be found <a href="https://github.com/medialize/sass.js/#using-the-sassjs-api">here</a>.
+        </p>
+        <p class="contribute">
+          If you are interested in contributing or reporting bugs, visit either <a href="https://github.com/medialize/playground.sass.js/">playground.sass.js</a> or <a href="https://github.com/medialize/sass.js/">sass.js</a> repos in github.
+        </p>
+        <div class="builtwith">
+          <div>
+            <h3>
+              <a target="_blank" href="https://github.com/medialize/sass.js/#sassjs">Sass.js</a>
+              <a target="_blank" class="lib_version" href="https://github.com/medialize/sass.js/releases/0.9.4" title="commit bfade3e">v0.9.4</a>
+            </h3>
+            <p>
+              Sass.js is made by Emscripting libSass. A convenience API for compiling Sass via Javascript.
+            </p>
+          </div>
+          <div>
+            <h3>
+              <a target="_blank" href="http://sass-lang.com/libsass">libSass</a>
+              <a target="_blank" class="lib_version" href="https://github.com/sass/libsass/releases/3.3.1" title="commit 42e22fb">v3.3.1</a>
+            </h3>
+            <p>
+              libSass is a C/C++ port of the Sass engine. The point is to be simple, faster, and easy to integrate.
+            </p>
+          </div>
+          <div>
+            <h3>
+              <a target="_blank" href="http://emscripten.org">Emscripten</a>
+              <a target="_blank" class="lib_version" href="https://github.com/kripken/emscripten/releases/1.35.4" title="commit e37f843">v1.35.4</a>
+            </h3>
+            <p>
+              Emscripten is an LLVM-based project that compiles C/C++ into highly-optimizable JS in asm format.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div id="options-container">
+    <div id="options-wrap">
       <h2 class="section-title">Sass.options()</h2>
+      <button class="close-options close-options-fixed">&#x2716;</button>
       <div id="options">
         <section class="option">
           <label for="options-style">style</label>
@@ -127,17 +177,17 @@
           <p class="comment">Disable sourceMappingUrl in CSS output</p>
         </section>
       </div>
-    </article>
+    </div>
   </div>
   <div class="playground">
     <article id="input-output" class="active">
       <h2 class="section-title">Sass.compile()</h2>
       <div id="editors">
-        <section>
+        <section class="editor-wrap">
           <h3 class="section-subtitle">SASS</h3>
           <div class="editor" id="input"></div>
         </section>
-        <section>
+        <section class="editor-wrap">
           <h3 class="section-subtitle">CSS</h3>
           <div class="editor" id="output"></div>
         </section>
@@ -149,7 +199,7 @@
     </article>
     <article id="sourcemap-wrap">
       <h2 class="section-title">Sourcemaps</h2>
-      <section>
+      <section class="editor-wrap">
         <h3 class="section-subtitle">SourceMap</h3>
         <div class="editor" id="sourcemap"></div>
       </section>
@@ -162,7 +212,7 @@
           <ul id="file_list"></ul>
           <button type="button" class="primary" id="new_file">add file</button>
         </section>
-        <section>
+        <section class="editor-wrap">
           <h3 class="section-subtitle">Add/Edit File</h3>
           <input id="file_name" type="text" placeholder="filename">
           <div class="editor" id="file_content"></div>
@@ -172,8 +222,8 @@
     </article>
   </div>
 
-  <script src="js/sass.js/sass.js"></script>
   <script src="js/ace/ace.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/sass.js/sass.js"></script>
+  <script src="js/bundle.js"></script>
 </body>
 </html>
