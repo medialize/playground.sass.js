@@ -1,5 +1,5 @@
 @mixin button {
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   color: #fff;
   background: #777;
   border: none;
@@ -7,19 +7,13 @@
   border: 1px solid #707070;
 
   &.success{
-    background: #686;
-    border-color: #686;
+    background: #4a5;
+    border-color: #4a5;
   }
 
   &.primary{
-    background: #668;
-    border-color: #668;
-  }
-
-  &.warning{
-    color: #222;
-    background: #ff9;
-    border-color: #dd9;
+    background: #567;
+    border-color: #567;
   }
 
   &.error{

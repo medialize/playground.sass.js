@@ -1,0 +1,23 @@
+footer {
+  position: relative;
+  padding: 0 1em;
+  line-height: 1.5;
+
+  .builtwith {
+    display: flex;
+
+    div {
+      flex: 1;
+    }
+  }
+
+  h3 {
+    display: inline-block;
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  .lib_version {
+    font-size: 0.75em;
+  }
+}

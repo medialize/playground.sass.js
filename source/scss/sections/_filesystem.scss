@@ -1,0 +1,72 @@
+#files {
+  display: flex;
+  flex: 1;
+
+  section {
+    flex: 1;
+
+    &:not(:first-child) {
+      padding-left: 1em;
+    }
+  }
+
+  #file_list {
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+    list-style-position: outside;
+  }
+
+  #file_name {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+
+  #save_file,
+  #new_file {
+    @include wideAttachedButton;
+  }
+}
+
+.file {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0.5em;
+  cursor: pointer;
+  background: #eee;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+
+  &.selected{
+    color: #222;
+    background: #fff;
+  }
+
+  button {
+    margin-left: 0.5em;
+  }
+
+  .icon-file {
+    padding: 0.5em 0;
+    padding-right: 0.5em;
+  }
+
+  .remove-file{
+    border-radius: 0;
+  }
+
+  .icon-file,
+  span {
+    line-height: 1.5;
+  }
+
+  span {
+    flex: 1;
+    padding: 0.5em 0;
+  }
+}

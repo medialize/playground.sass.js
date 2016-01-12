@@ -1,5 +1,5 @@
 module.exports = {
-  dev: {
+  dist: {
     files: {
       'dist/index.html': 'dist/index.html'
     }

@@ -1,0 +1,9 @@
+@mixin height-hack($percent){
+  overflow: hidden;
+
+  &:after{
+    padding-top: $percent;
+    content: "";
+    display: block;
+  }
+}

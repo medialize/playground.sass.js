@@ -1,0 +1,43 @@
+#editors {
+  display: flex;
+  flex: 1;
+
+  & > section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-left: 1em;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
+.editor-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.editor {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+#sourcemap-wrap {
+  flex: 1;
+}
+
+#filesystem,
+#input-output,
+#sourcemap-wrap {
+  display: none;
+  flex-direction: column;
+
+  &.active {
+    display: flex;
+  }
+}
